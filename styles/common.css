@@ -1,0 +1,59 @@
+/* index, 모든 sub 적용할 header, footer common.css*/
+#wrap {}
+#wrap header {}
+#wrap header h1 {}
+#wrap header h1 a {}
+#wrap header h1 a img {}
+#wrap header nav {}
+#wrap header nav .gnb {}
+#wrap header nav .gnb li {}
+#wrap header nav .gnb li a {
+    font-size: 1.125rem; font-weight: 600;
+    /* font-family:'pretendard',sans-serif; reset기본값에 존재하기에 생략*/
+    /* line-height: 1; letter-spacing: -0.02rem; reset기본값에 존재하기에 생략*/
+    /* text-align: left; 기본값이 왼쪽 설정임으로 생략 */
+    /* color: #000; reset기본값에 존재하기에 생략*/
+}
+#wrap header .right_menu {}
+#wrap header .right_menu li {}
+#wrap header .right_menu li a {
+    font-size: 0.75rem;
+    letter-spacing:0;
+}
+#wrap header .right_menu li a img {}
+/* =====================================footer 시작 */
+#wrap footer {}
+#wrap footer .top{}
+#wrap footer .top .left {}
+#wrap footer .top .left a {}
+#wrap footer .top .left a:nth-child(1) {
+    color:#138FBF;
+    font-weight:600;
+}
+#wrap footer .top .left a:nth-child(2) {
+    color:#DA2128;
+    font-weight:600;
+}
+#wrap footer .top .left img {}
+#wrap footer .top .right {}
+/* =================footer 패밀리사이트+사이트 맵 공통 */
+#wrap footer .top .right .site {
+    font-size:0.75rem;
+    border: 1px solid #eee;
+    padding: 7px 10px;
+}
+/* =================footer 패밀리사이트+사이트 맵 개별 */
+#wrap footer .top .right select {}
+#wrap footer .top .right select option {}
+#wrap footer .top .right .site_map {}
+#wrap footer .top .right .site_map span {}
+#wrap footer .top .right .site_map img{}
+#wrap footer .bottom {}
+#wrap footer .bottom * {
+    font-size: 0.875rem;
+    color:#808080;
+    line-height:1.5;
+}
+#wrap footer .bottom address {}
+#wrap footer .bottom address em {font-weight: 600;}
+#wrap footer .bottom p {}
