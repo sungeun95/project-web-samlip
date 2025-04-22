@@ -23,3 +23,4 @@ legend {display: none;} /* 숨긴다. */
 input {border:0; outline: none;} /* 선없애기+선택시 선없애기 */
 button {border: 0; background:none; cursor: pointer;}/* 선 없애기, 배경색 없애기, 마우스 커서 모양 바꾸기 */ 
 table,tr,td,th {border-collapse:collapse;} /* 이중선 없애기 */
+select, optgroup {border: 0; appearance: none;}
