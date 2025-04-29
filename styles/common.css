@@ -1,31 +1,93 @@
 /* index, 모든 sub 적용할 header, footer common.css*/
 #wrap {}
-#wrap header {}
+#wrap header {
+    height: 92px;
+    padding:0 60px;
+    /* container(header) item(h1, nav, righ_menu) */
+    display: flex;
+    flex-flow:row nowrap;
+    justify-content:space-between;
+    align-items:center;
+}
 #wrap header h1 {}
 #wrap header h1 a {}
 #wrap header h1 a img {}
-#wrap header nav {}
-#wrap header nav .gnb {}
-#wrap header nav .gnb li {}
+#wrap header nav {
+}
+#wrap header nav .gnb {
+    /* container(.gnb) item(li) */
+    display: flex; flex-flow:row nowrap;
+}
+#wrap header nav .gnb li {margin-right: 60px}
+#wrap header nav .gnb li:last-child {margin-right: 0;}
 #wrap header nav .gnb li a {
     font-size: 1.125rem; font-weight: 600;
+    display: block;
+    height:92px; line-height: 92px;
     /* font-family:'pretendard',sans-serif; reset기본값에 존재하기에 생략*/
     /* line-height: 1; letter-spacing: -0.02rem; reset기본값에 존재하기에 생략*/
     /* text-align: left; 기본값이 왼쪽 설정임으로 생략 */
     /* color: #000; reset기본값에 존재하기에 생략*/
 }
-#wrap header .right_menu {}
-#wrap header .right_menu li {}
+#wrap header .right_menu {
+    display:flex;
+    flex-flow:row nowrap;
+}
+#wrap header .right_menu li {margin-left: 30px;}
+#wrap header .right_menu li:first-child {
+    margin-left: 0; 
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+}
+#wrap header .right_menu li:last-child {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+}
+/* 포토샵 피그마에서 디자인 구분선 디자인을 CSS에서 가상선택자 after 또는 before를 이용하여 면으로 변경하여 디자인한다. */
+#wrap header .right_menu li:first-child::after{
+    content: "";
+    display: inline-block;
+    width: 1px; height: 20px;
+    background-color: #000;
+    margin-left: 30px;
+}
+#wrap header .right_menu li:first-child a {
+    line-height: 30px;
+}
+#wrap header .right_menu li:last-child a img {
+    width: 24px; height: 24px;
+}
 #wrap header .right_menu li a {
     font-size: 0.75rem;
     letter-spacing:0;
 }
 #wrap header .right_menu li a img {}
 /* =====================================footer 시작 */
-#wrap footer {}
-#wrap footer .top{}
-#wrap footer .top .left {}
-#wrap footer .top .left a {}
+#wrap .footer_full_w {
+    width: 100%;
+    padding: 50px 60px;
+}
+#wrap footer {
+    width: 1280px;
+    padding: 50px 0;
+    margin: 0 auto;
+}
+#wrap footer .top{
+    margin-bottom: 12px;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+}
+#wrap footer .top .left {
+    display:flex;
+    flex-flow:row nowrap;
+    align-items: center;
+}
+#wrap footer .top .left a {
+    margin-right:60px;
+}
 #wrap footer .top .left a:nth-child(1) {
     color:#138FBF;
     font-weight:600;
@@ -34,18 +96,35 @@
     color:#DA2128;
     font-weight:600;
 }
+#wrap footer .top .left a:last-child {margin-right: 0;}
 #wrap footer .top .left img {}
-#wrap footer .top .right {}
+#wrap footer .top .right {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+}
 /* =================footer 패밀리사이트+사이트 맵 공통 */
 #wrap footer .top .right .site {
     font-size:0.75rem;
     border: 1px solid #eee;
     padding: 7px 10px;
+    height: 38px;
 }
 /* =================footer 패밀리사이트+사이트 맵 개별 */
-#wrap footer .top .right select {}
+#wrap footer .top .right select {
+    width: 197px;
+    outline: none;
+    background: #fff url(../images/icon_arrow.png) no-repeat 95% center;
+    margin-right: 20px;
+}
 #wrap footer .top .right select option {}
-#wrap footer .top .right .site_map {}
+#wrap footer .top .right .site_map {
+    background-color: #fff;
+    width: 135px;
+    display: flex; flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+}
 #wrap footer .top .right .site_map span {}
 #wrap footer .top .right .site_map img{}
 #wrap footer .bottom {}
@@ -54,6 +133,10 @@
     color:#808080;
     line-height:1.5;
 }
-#wrap footer .bottom address {}
-#wrap footer .bottom address em {font-weight: 600;}
+#wrap footer .bottom address {
+    line-height: 1.5;
+    font-size: 0.875rem;
+    margin-bottom: 50px;
+}
+#wrap footer .bottom address em {font-weight: 600; }
 #wrap footer .bottom p {}
