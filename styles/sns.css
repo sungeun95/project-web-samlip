@@ -16,48 +16,48 @@
 #wrap main h1{
     font-size: 3.75rem;
     font-weight: 600;
-    padding: 80px 0 15px 0;
+    margin: 80px 0 15px 0;
 }
-#wrap main p{
+#wrap main>p{
     font-size: 1.125rem;
     color: #808080;
-    padding-bottom: 80px;
+    margin:0 0 80px;
 }
-#wrap main .sns_container{}
-#wrap main .sns_container .sns_box{ 
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: center;
+#wrap main .bg{
+    width: 100%;
     padding: 80px 0;
     background-color: #fcfcfc;
 }
-#wrap main .sns_container .sns_box a {
-    background-color: #f5f5f5;
-    width: 350px; height: 300px;
-    margin-right: 15px;
+#wrap main .bg .sns_box{ 
+    width: 1090px;
     display: flex;
-    flex-flow: column nowrap;
-    border: 1px solid #eee;
-    padding: 55px 0;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    margin: 80px auto;
 }
-#wrap main .sns_container .sns_box a:hover {
+#wrap main .bg .sns_box a {
+    background-color: #f5f5f5;
+    width: 350px; height: 300px ;
+    border: 1px solid #eee;
+    padding-top:55px;
+}
+#wrap main .bg .sns_box a:hover {
     background-color: #fff;
     border: 1px solid #138FBF;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2)
 }
-#wrap main .sns_container .sns_box a:last-child {margin-right: 0;}
-#wrap main .sns_container .sns_box a span{
-
-}
-#wrap main .sns_container .sns_box a span img{
-    /* width: 80px; height: 80px; */
-    padding-bottom: 10px;}
-#wrap main .sns_container .sns_box a h2{
-    margin: 30px 0;
+#wrap main .bg .sns_box a:last-child {}
+#wrap main .bg .sns_box a p>img{
+    margin-bottom: 10px;
+    }
+#wrap main .bg .sns_box a p:first-child {margin-bottom: 40px;}
+#wrap main .bg .sns_box a h2{
+    margin-bottom: 20px;
     font-size: 1.5rem;
     font-weight: 600;
 }
-#wrap main .sns_container .sns_box a p{
+#wrap main .bg .sns_box a p:last-child {
+    margin-bottom: 55px;
     font-size: 1rem;
     color: #bbb;
 }
