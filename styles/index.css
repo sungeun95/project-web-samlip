@@ -1,4 +1,38 @@
 /* index.css 메인 첫 페이지의 <main> */
+body, html {scroll-behavior:smooth}
+/* 우측 고정 */
+.right_nav {
+    position: fixed; right: 20px; top: 50%; transform: translateY(-50%);
+    text-align: right;
+    z-index: 999; /* 보이는 순서를 제일 위로 배치한다. */
+}
+.right_nav a{
+    display: block;
+    margin-bottom: 20px;
+    display: flex; /* 자식, 자손이 인라인이어도 크기 인식 가능 */
+    justify-content: flex-end;
+}
+.right_nav a:last-child{margin-bottom: 0;}
+.right_nav a em{
+    font-size: 0.75rem;
+    display: none; /* 글자 숨기기 */
+}
+.right_nav a:hover em{
+    display: inline;
+}
+.right_nav a span{
+    background-color: #fff;
+    width: 12px; height: 12px; border-radius: 50%;
+    border: 1px solid #ccc;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    margin-left: 10px;
+}
+.right_nav a:hover span{
+    background-color: #000;
+    border: 1px solid #ccc;
+}
+.right_nav a span{}
+/* 메인시작 */
 main {}
 main .ad_wrap {}/* 슬라이드+버튼 */
 main .ad_wrap .ad_container {}/* 슬라이드그룹 */
@@ -81,7 +115,7 @@ main .news_all .news_wrap .news_container .news .date{
     bottom:20px; left: 20px;
 }
 main .news_all .news_wrap .news_btn{}
-main .news_all .news_wrap .news_btn #news_prev {}
+main .news_all .news_wrap .news_btn #news_prev {margin-right: 10px;}
 main .news_all .news_wrap .news_btn #news_prev img{}
 main .news_all .news_wrap .news_btn #news_next {transform: scaleX(-1);}
 main .news_all .news_wrap .news_btn #news_next img{}
@@ -99,3 +133,129 @@ main .news_all .all_news:hover{background-color: #000;}
 main .news_all .all_news:hover img{filter:invert(100%);}
 main .news_all .all_news:hover em{color: #fff;}
 /* =========================== e:3. 뉴스&공지사항 */
+#wrap main .studio_wrap {
+    position:relative;/* open absolute의 기준 부모 대상 */
+    text-align:center;
+}
+#wrap main .studio_wrap h2 {
+    font-size: 2.5rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+#wrap main .studio_wrap p {
+    margin-bottom: 20px;
+}
+/* =====================3. 삼립스튜디오 - 유튜브 채널 미리보기 */
+#wrap main .studio_wrap .studio_list {
+    width:1370px; margin:80px auto;
+    display:flex; flex-flow:row wrap;
+    justify-content:space-between;
+}
+#wrap main .studio_wrap .studio_list a {
+    margin-bottom:50px;
+}
+#wrap main .studio_wrap .studio_list a img {}
+/* =====================3. 삼립스튜디오 - 유튜브 채널 OPEN 영역 */
+#wrap main .studio_wrap .studio_open {
+    background-color:rgba(0,0,0,0.8);
+    position:absolute; left:0; top:0;
+    /* absolute가 적용된 대상은 그 대상이 block이어도 자동으로 inline-block처럼 자식의 내용만큼만 크기를 인식하기 때문에 별도의 width 크기를 반드시 설정해야 한다.(fixed 동일) */
+    width:100%; height:100vh;
+    display:none;/* 초기 숨기기(클릭할때만 보이도록) */
+}
+#wrap main .studio_wrap .studio_open .open_container {
+    height:100%;
+    display:flex; flex-flow:column nowrap;
+    justify-content:center; align-items:center;
+}
+#wrap main .studio_wrap .studio_open .open_container .close {
+    color:#fff;
+    width:900px; text-align:right;
+}
+#wrap main .studio_wrap .studio_open .open_container .youtube {}
+#wrap main .studio_wrap .studio_open .open_container .youtube iframe {
+    display:none;/* 모두 숨기기 */
+    width:900px;
+}
+#wrap main .studio_wrap .studio_open .open_container .youtube iframe:first-child {
+    display:block;
+}
+/* =====================3. 삼립스튜디오 - (고정) 하단 링크 */
+#wrap main .studio_wrap .youtube_link {
+    display:flex; flex-flow:row nowrap; align-items:center;
+    border:1px solid #aaa;
+    padding:20px 60px;
+    width:max-content; margin: 50px auto;
+}
+#wrap main .studio_wrap .youtube_link img {}
+#wrap main .studio_wrap .youtube_link em {}
+/* =====================3. 삼립스튜디오 - (고정) 하단 링크(hover) */
+#wrap main .studio_wrap .youtube_link:hover {background-color:#000;}
+#wrap main .studio_wrap .youtube_link:hover img {filter:invert(100%);}
+#wrap main .studio_wrap .youtube_link:hover em {color:#fff;}
+/* =====================e : 3. 삼립스튜디오*/
+/* =========================== s:4. 삼립 브래드 */
+#wrap main .brands_all {text-align: center;background-color: #EEE;padding: 50px 0;}
+#wrap main .brands_all h2{
+    font-size: 2.5rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+#wrap main .brands_all>p{margin-bottom: 100px;}
+/* =========================== 삼립 브래드(슬라이드) */
+#wrap main .brands_all .brands_wrap{
+    width:1370px; overflow:hidden;
+    margin: 0 auto;
+}
+#wrap main .brands_all .brands_wrap .brands_container{
+    display: flex;
+    flex-flow: row nowrap;
+    width: max-content; /* 넓이를 내용만큼 인식하고 설정하겠다 */
+}
+#wrap main .brands_all .brands_wrap .brands_container>*{
+    /* 슬라이드 12개에 대한 정렬갑 (부모기준 flex) */
+    width: 1370px;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+}
+#wrap main .brands_all .brands_wrap .brands_container .brands_slide1{}
+#wrap main .brands_all .brands_wrap .brands_container .brands_slide2{}
+/* =========================== 삼립 브래드(개별슬라이드시작) */
+#wrap main .brands_all .brands_wrap .brands_container ul[class*=slidel] li{
+    width: 200px ; height: 120px;
+    position: relative;/* 부모기준 */
+    margin-bottom: 50px;
+}
+#wrap main .brands_all .brands_wrap .brands_container ul[class*=slidel] li:nth-child(6)~li{
+    margin-bottom: 0;
+}
+#wrap main .brands_all .brands_wrap .brands_container ul[class*=slidel] li:hover .logo_details{display: block;}
+#wrap main .brands_all .brands_wrap .brands_container ul[class*=slidel] li .logo{}
+#wrap main .brands_all .brands_wrap .brands_container ul[class*=slidel] li .logo img{}
+#wrap main .brands_all .brands_wrap .brands_container ul[class*=slidel] li .logo_details{
+    background-color: #36b4e5;
+    position: absolute; /* 겹치는 대상 */
+    left: 0; top: 0;/* 엡솔루트 작성시 좌표 필수 */
+    width: 100%; height: 100%; /* 엡솔루트의부모 대상과 동일한 크기 설정 */
+    display: none;/* 초기 숨기기 */
+    padding: 15px 0; 
+}
+#wrap main .brands_all .brands_wrap .brands_container ul[class*=slidel] li .logo_details * {color: #fff;}
+#wrap main .brands_all .brands_wrap .brands_container ul[class*=slidel] li .logo_details h3{
+    font-weight: 600; margin-bottom: 4px;
+}
+#wrap main .brands_all .brands_wrap .brands_container ul[class*=slidel] li .logo_details p{
+    font-size: 0.875rem; line-height: 1.4;
+    margin-bottom: 10px;
+}
+#wrap main .brands_all .brands_wrap .brands_container ul[class*=slidel] li .logo_details a{
+    font-size: 0.75rem; border: 1px solid #fff; padding: 2px 4px;
+}
+/* =========================== 삼립 브래드(슬라이드 버튼) */
+#wrap main .brands_all .brands_wrap .brands_btn {margin-top: 20px ;}
+#wrap main .brands_all .brands_wrap .brands_btn #brands_prev {margin-right: 10px;}
+#wrap main .brands_all .brands_wrap .brands_btn #brands_prev img {}
+#wrap main .brands_all .brands_wrap .brands_btn #brands_next {transform: scaleX(-1);}
+#wrap main .brands_all .brands_wrap .brands_btn #brands_next img {}
+/* =========================== e:4. 삼립 브래드 */
