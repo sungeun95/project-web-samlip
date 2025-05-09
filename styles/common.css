@@ -1,14 +1,18 @@
 /* index, 모든 sub 적용할 header, footer common.css*/
-#wrap {}
+#wrap {
+    min-width: 1900px;
+}
 #wrap header {
+    width: 100%; min-width: 1200px;
     height: 92px;
     padding:0 60px;
     /* container(header) item(h1, nav, righ_menu) */
     display: flex;
+    z-index: 900;
     flex-flow:row nowrap;
     justify-content:space-between;
     align-items:center;
-    position: relative; /* lnb_bg의 부모 위치 기준 설정 */
+    position: fixed; top: 0; background-color: #fff; /* lnb_bg의 부모 위치 기준 설정 */
 }
 #wrap header h1 {}
 #wrap header h1 a {}
